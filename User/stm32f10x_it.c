@@ -13,7 +13,8 @@
   * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
   * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
   * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
-  * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
+  * DIRECT, INDIRE#include "stm32f10x_it.h"
+CT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
   * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
   * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
   *
@@ -22,11 +23,11 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
-#include "stm32f10x_it.h"
 #include "stm32f10x.h"
 #include "rc.h"
+#include "dma_extension.h"
+#include "stm32f10x_it.h"
 
-extern RC_PacketStructure rc_packet;
 extern uint8_t rc_data[RC_FRAME_LENGTH];
 
 /** @addtogroup STM32F10x_StdPeriph_Template
@@ -143,10 +144,28 @@ void SysTick_Handler(void)
 }
 
 
-void DMA1_Channel5_IRQHandler(void)
+void USART3_IRQHandler(void)
 {
-	
-	
+	if(USART_GetITStatus(USART3,USART_IT_IDLE)==SET)
+	{
+		//清空标志位  清空数据
+//		(void)USART2->DR;
+		
+//		if(DMA_GetCurrentMemoryTarget(DMA1_Channel6)==(uint32_t)rc_data)
+//		{
+			DMA_Cmd(DMA1_Channel3,DISABLE);
+			RemotePacketProcess();
+			RemoteControl();
+			DMA_SetCurrDataCounter(DMA1_Channel3,RC_FRAME_LENGTH);//设置传输数量
+			//DMA1_Channel6->CMAR|=(uint32_t)(rc_data);//设置当前存储器地址
+			DMA_Cmd(DMA1_Channel3,ENABLE);
+			USART_ReceiveData(USART3);                              //读取一次数据，不然会一直进中断
+			USART_ClearITPendingBit(USART3,USART_IT_IDLE);
+
+				
+
+//	}
+	}
 }
 
 

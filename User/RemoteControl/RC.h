@@ -19,7 +19,7 @@
 #define KEY_PRESSED_OFFSET_E ((uint16_t)0x01<<5)
 #define KEY_PRESSED_OFFSET_SHIFT ((uint16_t)0x01<<6)
 #define KEY_PRESSED_OFFSET_CTRL ((uint16_t)0x01<<7)
-#define RC_FRAME_LENGTH 18u
+#define RC_FRAME_LENGTH 19u
 
 typedef struct
 {
@@ -45,9 +45,10 @@ typedef struct
 			uint16_t v;
 	}key;
 }RC_PacketStructure;
-
+void RemoteControl_Init(void);
 void NVIC_RC_Init(void);
 void RemoteToolDma_Init(void);
 void DebusUsart_Init(void);
-void RemotePacketProcess(RC_PacketStructure rc_packet);
+void RemotePacketProcess(void);
+void RemoteControl(void);
 #endif

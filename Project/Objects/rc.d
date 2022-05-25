@@ -29,4 +29,7 @@
 .\objects\rc.o: ..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h
 .\objects\rc.o: ..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h
 .\objects\rc.o: ..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h
+.\objects\rc.o: ..\User\Motor\motor.h
+.\objects\rc.o: ..\User\Timer\timer.h
 .\objects\rc.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\rc.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

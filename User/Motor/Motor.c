@@ -40,29 +40,32 @@ void PullMotor_Forward(uint16_t speed)
 	TIM_CCxCmd(TIM3,TIM_Channel_3,TIM_CCx_Enable);
 	TIM_SetCompare3(TIM3,speed);
 }
+void AllMotor_Stop(void)
+{
+	TIM_SetCompare1(TIM1,0);
+	TIM_SetCompare2(TIM1,0);
+}
+void RightMotor_Forward(uint16_t speed)
+{
+	TIM_SetCompare1(TIM1,0);
+	TIM_SetCompare2(TIM1,speed);
+}
 
-void Motor1_Forward(uint16_t speed)
+void RightMotor_Reverse(uint16_t speed)
+{
+	TIM_SetCompare1(TIM1,speed);
+	TIM_SetCompare2(TIM1,0);
+}
+
+void LeftMotor_Forward(uint16_t speed)
 {
 	TIM_SetCompare3(TIM1,speed);
 	TIM_SetCompare4(TIM1,0);
 }
-
-void Motor1_Reverse(uint16_t speed)
+void LeftMotor_Reverse(uint16_t speed)
 {
-	TIM_SetCompare4(TIM1,speed);
 	TIM_SetCompare3(TIM1,0);
-}
-void Motor2_Forward(uint16_t speed)
-{
-	TIM_SetCompare1(TIM1,speed);
-	TIM_SetCompare2(TIM1,0);
-
-
-}
-void Motor2_Reverse(uint16_t speed)
-{
-	TIM_SetCompare2(TIM1,speed);
-	TIM_SetCompare1(TIM1,0);
+	TIM_SetCompare4(TIM1,speed);
 }
 void RubESCUnlock(void)//摩擦轮电调解锁
 {
@@ -76,12 +79,12 @@ void RubMotorInit()//摩擦轮电机初始化
 }
 void SetLeftSpeed(uint16_t speed)
 {
-	uint16_t final=(float)speed/100*1000+1000;
+	uint16_t final=(uint16_t)((float)speed/100*1000)+1000;
 	TIM_SetCompare2(TIM2,final);
 }
 void SetRightSpeed(uint16_t speed)
 {
-	uint16_t final=(float)speed/100*1000+1000;
+	uint16_t final=(uint16_t)((float)speed/100*1000)+1000;
 	TIM_SetCompare3(TIM2,final);
 
 }
