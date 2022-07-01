@@ -45,18 +45,20 @@ void SteerTimer_Init(void)
 	OC_InitStructure.TIM_OCMode=TIM_OCMode_PWM1;
 	OC_InitStructure.TIM_OCPolarity=TIM_OCPolarity_High;
 	OC_InitStructure.TIM_OutputState=TIM_OutputState_Enable;
-	OC_InitStructure.TIM_Pulse=500;
+	OC_InitStructure.TIM_Pulse=500-1;
 	TIM_OC1Init(SteerTim,&OC_InitStructure);
 	TIM_OC4Init(TIM3,&OC_InitStructure);
 	TIM_OC1Init(TIM2,&OC_InitStructure);
-
+	TIM_OC1PreloadConfig(SteerTim,TIM_OCPreload_Enable);
+	TIM_OC4PreloadConfig(TIM3,TIM_OCPreload_Enable);
+	TIM_OC1PreloadConfig(TIM2,TIM_OCPreload_Enable);
 	TIM_Cmd(SteerTim,ENABLE);
 	TIM_Cmd(TIM2,ENABLE);
 }
 
 void SteerTimer_SetAngle(TIM_TypeDef *timx,uint8_t channel,uint16_t angle)
 {
-	uint16_t count=((float)angle/180)*2000+500;
+	uint16_t count=((float)angle/180)*2000+500-1;
 	switch(channel)
 	{
 		case 1:TIM_SetCompare1(timx,count);break;
@@ -109,6 +111,7 @@ void DCMotorTimer_Init(void)
 	timOCInitStructure.TIM_OCNIdleState=TIM_OCNIdleState_Reset;
 	timOCInitStructure.TIM_OCNPolarity=TIM_OCNPolarity_Low;
 	timOCInitStructure.TIM_OutputNState=TIM_OutputNState_Disable;
+	timOCInitStructure.TIM_Pulse=0;
 	
 	
 	TIM_OC1Init(TIM1,&timOCInitStructure);
@@ -149,7 +152,7 @@ void RubSteelTimer_Init(void)
 	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStructure;
 	TIM_TimeBaseInitStructure.TIM_ClockDivision=TIM_CKD_DIV1;
 	TIM_TimeBaseInitStructure.TIM_CounterMode=TIM_CounterMode_Up;
-	TIM_TimeBaseInitStructure.TIM_Period=2000-1;
+	TIM_TimeBaseInitStructure.TIM_Period=20000-1;
 	TIM_TimeBaseInitStructure.TIM_Prescaler=72-1;
 	TIM_TimeBaseInit(TIM2,&TIM_TimeBaseInitStructure);
 	

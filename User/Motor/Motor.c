@@ -23,6 +23,7 @@ void PullMotor_Back(uint16_t speed)
   GPIO_ResetBits(GPIOB,GPIO_Pin_0);
 	delay_ms(500);
 	TIM_CCxCmd(TIM3,TIM_Channel_1,TIM_CCx_Enable);
+	TIM_SetCompare3(TIM3,0);
 	TIM_SetCompare1(TIM3,speed);
 	//TIM_SetCompare1(TIM3,10000);
 	//TIM_SetCompare3(TIM3,0);
@@ -38,12 +39,15 @@ void PullMotor_Forward(uint16_t speed)
   GPIO_ResetBits(GPIOA,GPIO_Pin_6);
 	delay_ms(500);
 	TIM_CCxCmd(TIM3,TIM_Channel_3,TIM_CCx_Enable);
+	TIM_SetCompare1(TIM3,0);
 	TIM_SetCompare3(TIM3,speed);
 }
 void AllMotor_Stop(void)
 {
 	TIM_SetCompare1(TIM1,0);
 	TIM_SetCompare2(TIM1,0);
+	TIM_SetCompare3(TIM1,0);
+	TIM_SetCompare4(TIM1,0);
 }
 void RightMotor_Forward(uint16_t speed)
 {
@@ -79,12 +83,12 @@ void RubMotorInit()//摩擦轮电机初始化
 }
 void SetLeftSpeed(uint16_t speed)
 {
-	uint16_t final=(uint16_t)((float)speed/100*1000)+1000;
+	uint16_t final=(uint16_t)((float)speed/100*1000)+1000-1;
 	TIM_SetCompare2(TIM2,final);
 }
 void SetRightSpeed(uint16_t speed)
 {
-	uint16_t final=(uint16_t)((float)speed/100*1000)+1000;
+	uint16_t final=(uint16_t)((float)speed/100*1000)+1000-1;
 	TIM_SetCompare3(TIM2,final);
 
 }
@@ -100,3 +104,4 @@ void SetFrontAngle(uint16_t angle)//前轮舵机转向
 {
 	SteerTimer_SetAngle(SteerTim,1,angle);
 }
+

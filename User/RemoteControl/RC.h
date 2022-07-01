@@ -20,6 +20,10 @@
 #define KEY_PRESSED_OFFSET_SHIFT ((uint16_t)0x01<<6)
 #define KEY_PRESSED_OFFSET_CTRL ((uint16_t)0x01<<7)
 #define RC_FRAME_LENGTH 19u
+#define Get_Bit(x,bit) ((x&((uint16_t)1<<bit))>>bit)
+
+
+
 
 typedef struct
 {
@@ -52,3 +56,4 @@ void DebusUsart_Init(void);
 void RemotePacketProcess(void);
 void RemoteControl(void);
 #endif
+

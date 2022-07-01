@@ -20,3 +20,29 @@ void delay_ms(uint16_t ms)
 	}
 
 }
+
+void systick_delay_ms(uint32_t ms)
+{
+	SysTick_CLKSourceConfig(SysTick_CLKSource_HCLK);
+	SysTick_Config(72000);
+	for(int i=0;i<ms;i++)
+	{
+	
+		while(!((SysTick->CTRL)&(1<<16)));
+	
+	}
+	SysTick->CTRL&=~SysTick_CTRL_ENABLE_Msk;
+}
+
+void systick_delay_us(uint32_t us)
+{
+	SysTick_CLKSourceConfig(SysTick_CLKSource_HCLK);
+	SysTick_Config(72);
+	for(int i=0;i<us;i++)
+	{
+	
+		while(!((SysTick->CTRL)&(1<<16)));
+	
+	}
+	SysTick->CTRL&=~SysTick_CTRL_ENABLE_Msk;
+}

@@ -1,11 +1,20 @@
 #include "RC.h"
 #include "motor.h"
+#include "delay.h"
 #include <stdio.h>
 #include <math.h>
 
+
+
 RC_PacketStructure rc_packet;
 uint8_t rc_data[RC_FRAME_LENGTH];
-uint16_t adjustFrontSteerAngle=90;
+int16_t adjustFrontSteerAngle=88;
+int16_t YAngle=125,XAngle=90;
+int16_t escSpeed=0;
+int16_t pullBulletSpeed=10000;
+int16_t mouseXMaxRange=54;
+int16_t mouseYMaxRange=26;
+int16_t mouseFlexibility=250,mouseFlexibility2=200;
 
 
 void RemoteToolDma_Init(void)
@@ -14,8 +23,7 @@ void RemoteToolDma_Init(void)
 	
 	//开启DMA时钟
 	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA1,ENABLE);
-	
-	
+
 	toolDmaInitStructure.DMA_BufferSize=RC_FRAME_LENGTH;
 	toolDmaInitStructure.DMA_DIR=DMA_DIR_PeripheralSRC;
 	toolDmaInitStructure.DMA_M2M=DMA_M2M_Disable;
@@ -79,6 +87,7 @@ void RemoteControl_Init(void)
 		NVIC_RC_Init();
 }
 
+
 void RemotePacketProcess(void)
 {
 	if(&rc_packet==NULL) return;
@@ -86,7 +95,6 @@ void RemotePacketProcess(void)
 	rc_packet.rc.channel1 = (((int16_t)rc_data[1] >> 3) | ((int16_t)rc_data[2] << 5)) & 0x07FF;
 	rc_packet.rc.channel2 = (((int16_t)rc_data[2] >> 6) | ((int16_t)rc_data[3] << 2) |((int16_t)rc_data[4] << 10)) & 0x07FF;
 	rc_packet.rc.channel3 = (((int16_t)rc_data[4] >> 1) | ((int16_t)rc_data[5]<<7)) & 0x07FF;
- 
 	rc_packet.rc.s1 = ((rc_data[5] >> 4) & 0x000C) >> 2;
 	rc_packet.rc.s2 = ((rc_data[5] >> 4) & 0x0003);
 	rc_packet.mouse.x = ((int16_t)rc_data[6]) | ((int16_t)rc_data[7] << 8);
@@ -96,37 +104,197 @@ void RemotePacketProcess(void)
 	rc_packet.mouse.press_r = rc_data[13];
 	rc_packet.key.v = ((int16_t)rc_data[14]);// | ((int16_t)pData[15] << 8);
 }
+
+
 void RemoteControl(void)
 {
-	uint16_t behindMotorSpeed,frontSteerAngle,mediumValue1,mediumValue2;
+	uint16_t behindMotorSpeed;
+	uint16_t frontSteerAngle;
+	uint16_t mediumValue1,mediumValue2;
+	int16_t mouseSpeedX=rc_packet.mouse.x;
+	int16_t mouseSpeedY=rc_packet.mouse.y;
+	uint16_t tempAngle=0;
+	double mediumValue3,mediumValue4,mediumValue5,mediumValue6;
 	
-	if(rc_packet.rc.s2==RC_SW_UP)
+
+	//键盘控制部分
+	if(rc_packet.rc.s1==RC_SW_MID&&rc_packet.rc.s2==RC_SW_MID)
 	{
-		if(rc_packet.rc.channel0!=RC_CH_VALUE_OFFSET)
+		//if(rc_packet.key.v==0x00) return;
+		if(mouseSpeedX<0) mouseSpeedX=-mouseSpeedX;
+		if(mouseSpeedY<0) mouseSpeedY=-mouseSpeedY;
+		if(Get_Bit(rc_packet.key.v,1))//后退
 		{
-			if((rc_packet.rc.channel0-RC_CH_VALUE_OFFSET)>0)//右转
-			{
-				mediumValue2=rc_packet.rc.channel0-RC_CH_VALUE_OFFSET;
-				frontSteerAngle=(uint16_t)(((float)mediumValue2/660)*90)+90;
-				adjustFrontSteerAngle=frontSteerAngle;
-				SetFrontAngle(frontSteerAngle);
-			
-			}
-			if((RC_CH_VALUE_OFFSET-rc_packet.rc.channel0)>0)//左转
-			{
-				mediumValue2=RC_CH_VALUE_OFFSET-rc_packet.rc.channel0;
-				frontSteerAngle=90-(uint16_t)(((float)mediumValue2/660)*90);
-				adjustFrontSteerAngle=frontSteerAngle;
-				SetFrontAngle(frontSteerAngle);
-			}
+				LeftMotor_Reverse(19999);
+				RightMotor_Reverse(19999);
+		}
+		else if(Get_Bit(rc_packet.key.v,0))//前进
+		{
+				LeftMotor_Forward(19999);
+				RightMotor_Forward(19999);
+		
 		}else
 		{
+				AllMotor_Stop();
+		}
+		if(Get_Bit(rc_packet.key.v,2))//左转
+		{
+				SetFrontAngle(0);
+		}else if(Get_Bit(rc_packet.key.v,3))//右转
+		{
+				SetFrontAngle(180);
+		}
+		else {
 				SetFrontAngle(adjustFrontSteerAngle);
+		}
+		if(Get_Bit(rc_packet.key.v,6))//摩擦轮增速
+		{
+			if((escSpeed>=0)&&(escSpeed<100))
+			{
+				escSpeed+=1;
+				SetLeftSpeed(escSpeed);
+				SetRightSpeed(escSpeed);
+			}		
+			
+			
+		}
+		if(Get_Bit(rc_packet.key.v,7))//摩擦轮减速
+		{
+			if(escSpeed>0&&escSpeed<=100)
+			{
+				escSpeed-=1;
+				SetLeftSpeed(escSpeed);
+				SetRightSpeed(escSpeed);
+			}		
+		}
+		if(rc_packet.mouse.x>0)//鼠标右移  云台右移
+		{
+			mediumValue3=((double)mouseSpeedX/mouseFlexibility);
+			tempAngle=(uint16_t)(mediumValue3*mouseXMaxRange);
+			if((XAngle-tempAngle)>30&&(XAngle-tempAngle)<=140)
+			{
+					for(int i=0;i<tempAngle;i++)
+					{
+						XAngle-=1;
+						SetXAngle(XAngle);
+						delay_ms(1);
+					}
+			}
+			
+		}
+		if(rc_packet.mouse.x<0)//鼠标左移  云台左移
+		{
+			mediumValue4=((double)mouseSpeedX/mouseFlexibility);
+			tempAngle=(uint16_t)(mediumValue4*mouseXMaxRange);
+			if((XAngle+tempAngle)>=30&&(XAngle+tempAngle)<140)
+			{
+					for(int i=0;i<tempAngle;i++)
+					{
+						XAngle+=1;
+						SetXAngle(XAngle);
+						delay_ms(1);
+					}
+					
+					
+			}	
+		}
+		if(rc_packet.mouse.y>0)//鼠标下移  云台下移
+		{
+			mediumValue5=((double)mouseSpeedY/mouseFlexibility2);
+			tempAngle=(uint16_t)(mediumValue5*mouseYMaxRange);
+			if((YAngle+tempAngle)>94&&(YAngle+tempAngle)<=152)
+			{
+					for(int i=0;i<tempAngle;i++)
+					{
+						YAngle+=1;
+						SetYAngle(YAngle);
+						delay_ms(1);
+					}
+			}	
+				
+		}
+		if(rc_packet.mouse.y<0)//鼠标上移   云台上移
+		{
+			mediumValue6=((double)mouseSpeedY/mouseFlexibility2);
+			tempAngle=(uint16_t)(mediumValue6*mouseYMaxRange);
+			if((YAngle-tempAngle)>=94&&(YAngle-tempAngle)<152)
+			{
+					for(int i=0;i<tempAngle;i++)
+					{
+						YAngle-=1;
+						SetYAngle(YAngle);
+						delay_ms(1);
+					}
+			}	
+		}
+		if(rc_packet.mouse.press_l)//鼠标左键点击
+		{
+			
+			
+		}
+		return;
+	}
+		
+		
+		
+	
+	
+	
+	//摩擦轮速度调整
+	if(rc_packet.rc.s2==RC_SW_MID&&rc_packet.rc.s1==RC_SW_DOWN)
+	{
+		if((rc_packet.rc.channel3-RC_CH_VALUE_OFFSET)>0)//升高
+		{
+			if((escSpeed>=0)&&(escSpeed<100))
+			{
+				escSpeed+=1;
+				SetLeftSpeed(escSpeed);
+				SetRightSpeed(escSpeed);
+			}		
+		}
+		if((rc_packet.rc.channel3-RC_CH_VALUE_OFFSET)<0)//降低
+		{
+			if(escSpeed>0&&escSpeed<=100)
+			{
+				escSpeed-=1;
+				SetLeftSpeed(escSpeed);
+				SetRightSpeed(escSpeed);
+			}		
+		}
+		return;
+	}
+	//前轮倾斜调整代码
+	if(rc_packet.rc.s1==RC_SW_MID&&rc_packet.rc.s2==RC_SW_UP)
+	{
+		if((rc_packet.rc.channel2-RC_CH_VALUE_OFFSET)>0)//右转
+		{
+			
+			if((adjustFrontSteerAngle<180)&&(adjustFrontSteerAngle>=0))
+			{
+				adjustFrontSteerAngle+=1;
+				SetFrontAngle(adjustFrontSteerAngle);
+				//delay_us(5);
+			
+			}
+			
+		}
+		if((RC_CH_VALUE_OFFSET-rc_packet.rc.channel2)>0)//左转
+		{
+			
+			if(adjustFrontSteerAngle<=180&&adjustFrontSteerAngle>0)
+			{
+				adjustFrontSteerAngle-=1;
+				SetFrontAngle(adjustFrontSteerAngle);
+				//delay_us(5);
+			}
 		}
 		return;
 	}
 	
-	//后轮代码
+	
+	if(rc_packet.rc.s1==RC_SW_UP&&rc_packet.rc.s2==RC_SW_UP)   //两按键处于上时
+	{
+			//后轮代码
 	if(rc_packet.rc.channel3!=RC_CH_VALUE_OFFSET)
 	{
 		if((rc_packet.rc.channel3-RC_CH_VALUE_OFFSET)>0)//正转
@@ -149,24 +317,91 @@ void RemoteControl(void)
 	
 	
 	//前轮舵机驱动  180度是向右  0度向左
-	if(rc_packet.rc.channel0!=RC_CH_VALUE_OFFSET)
+	if(rc_packet.rc.channel2!=RC_CH_VALUE_OFFSET)
 	{
-		if((rc_packet.rc.channel0-RC_CH_VALUE_OFFSET)>0)//右转
+		if((rc_packet.rc.channel2-RC_CH_VALUE_OFFSET)>0)//右转
 		{
-			mediumValue2=rc_packet.rc.channel0-RC_CH_VALUE_OFFSET;
+			mediumValue2=rc_packet.rc.channel2-RC_CH_VALUE_OFFSET;
 			frontSteerAngle=(uint16_t)(((float)mediumValue2/660)*90)+90;
 			SetFrontAngle(frontSteerAngle);
 			
 		}
-		if((RC_CH_VALUE_OFFSET-rc_packet.rc.channel0)>0)//左转
+		if((RC_CH_VALUE_OFFSET-rc_packet.rc.channel2)>0)//左转
 		{
-			mediumValue2=RC_CH_VALUE_OFFSET-rc_packet.rc.channel0;
+			mediumValue2=RC_CH_VALUE_OFFSET-rc_packet.rc.channel2;
 			frontSteerAngle=90-(uint16_t)(((float)mediumValue2/660)*90);
 			SetFrontAngle(frontSteerAngle);
 		}
 	}else
 	{
-			SetFrontAngle(88);
+			SetFrontAngle(adjustFrontSteerAngle);
+	}
+	
+	//X轴舵机驱动  
+	if(rc_packet.rc.channel0!=RC_CH_VALUE_OFFSET)
+	{
+		if((rc_packet.rc.channel0-RC_CH_VALUE_OFFSET)>0)//右转
+		{
+				if(XAngle>30&&XAngle<=140)
+				{
+					
+					XAngle-=1;
+					SetXAngle(XAngle);
+					//delay_us(5);
+					
+					
+				}			
+		}
+		if((RC_CH_VALUE_OFFSET-rc_packet.rc.channel0)>0)//左转
+		{
+				if(XAngle>=30&&XAngle<140)
+				{
+					XAngle+=1;
+					SetXAngle(XAngle);
+					//delay_us(5);
+				}	
+		}	
+		
+	}else
+	{
+		SetXAngle(XAngle);
 	}
 
+	
+	//Y轴舵机驱动
+	if(rc_packet.rc.channel1!=RC_CH_VALUE_OFFSET)
+	{
+		if((rc_packet.rc.channel1-RC_CH_VALUE_OFFSET)>0)//上转
+		{
+				if((YAngle>94)&&(YAngle<=152))
+				{
+					YAngle-=1;
+					SetYAngle(YAngle);
+					//delay_us(5);
+				}			
+		}
+		if((RC_CH_VALUE_OFFSET-rc_packet.rc.channel1)>0)//下转
+		{
+				if((YAngle>=94)&&(YAngle<152))
+				{
+					YAngle+=1;
+					SetYAngle(YAngle);
+					//delay_us(5);
+				}	
+		}	
+		
+	}else
+	{
+		SetYAngle(YAngle);
+	}
+	
+	}
+	
+	//拨弹电机
+	if(rc_packet.rc.s1==RC_SW_DOWN&&rc_packet.rc.s2==RC_SW_DOWN)
+	{
+		PullMotor_Forward(20000);
+		
+	}
 }
+
