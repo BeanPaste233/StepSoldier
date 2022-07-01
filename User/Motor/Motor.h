@@ -18,5 +18,6 @@ void RubMotorInit(void);
 void SetLeftSpeed(uint16_t speed);
 void SetRightSpeed(uint16_t speed);
 void AllMotor_Stop(void);
+void PullMotor_Stop();
 #endif
 

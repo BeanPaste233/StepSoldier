@@ -42,6 +42,13 @@ void PullMotor_Forward(uint16_t speed)
 	TIM_SetCompare1(TIM3,0);
 	TIM_SetCompare3(TIM3,speed);
 }
+void PullMotor_Stop()
+{
+	TIM_CCxCmd(TIM3,TIM_Channel_1,TIM_CCx_Disable);
+	TIM_CCxCmd(TIM3,TIM_Channel_3,TIM_CCx_Disable);
+  GPIO_ResetBits(GPIOA,GPIO_Pin_6);
+	GPIO_ResetBits(GPIOB,GPIO_Pin_0);
+}
 void AllMotor_Stop(void)
 {
 	TIM_SetCompare1(TIM1,0);

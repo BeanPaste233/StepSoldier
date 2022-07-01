@@ -294,114 +294,115 @@ void RemoteControl(void)
 	
 	if(rc_packet.rc.s1==RC_SW_UP&&rc_packet.rc.s2==RC_SW_UP)   //两按键处于上时
 	{
+		 PullMotor_Stop();
 			//后轮代码
-	if(rc_packet.rc.channel3!=RC_CH_VALUE_OFFSET)
-	{
-		if((rc_packet.rc.channel3-RC_CH_VALUE_OFFSET)>0)//正转
+		if(rc_packet.rc.channel3!=RC_CH_VALUE_OFFSET)
 		{
-			mediumValue1=rc_packet.rc.channel3-RC_CH_VALUE_OFFSET;
-			behindMotorSpeed=(uint16_t)(((float)mediumValue1/660)*20000);
-			LeftMotor_Forward(behindMotorSpeed);
-			RightMotor_Forward(behindMotorSpeed);
-		}else//反转
+			if((rc_packet.rc.channel3-RC_CH_VALUE_OFFSET)>0)//正转
+			{
+				mediumValue1=rc_packet.rc.channel3-RC_CH_VALUE_OFFSET;
+				behindMotorSpeed=(uint16_t)(((float)mediumValue1/660)*20000);
+				LeftMotor_Forward(behindMotorSpeed);
+				RightMotor_Forward(behindMotorSpeed);
+			}else//反转
+			{
+				mediumValue1=RC_CH_VALUE_OFFSET-rc_packet.rc.channel3;
+				behindMotorSpeed=(uint16_t)(((float)mediumValue1/660)*20000);
+				LeftMotor_Reverse(behindMotorSpeed);
+				RightMotor_Reverse(behindMotorSpeed);
+			}
+		}else
 		{
-			mediumValue1=RC_CH_VALUE_OFFSET-rc_packet.rc.channel3;
-			behindMotorSpeed=(uint16_t)(((float)mediumValue1/660)*20000);
-			LeftMotor_Reverse(behindMotorSpeed);
-			RightMotor_Reverse(behindMotorSpeed);
+				AllMotor_Stop();
 		}
-	}else
-	{
-			AllMotor_Stop();
-	}
-	
-	
-	//前轮舵机驱动  180度是向右  0度向左
-	if(rc_packet.rc.channel2!=RC_CH_VALUE_OFFSET)
-	{
-		if((rc_packet.rc.channel2-RC_CH_VALUE_OFFSET)>0)//右转
+		
+		
+		//前轮舵机驱动  180度是向右  0度向左
+		if(rc_packet.rc.channel2!=RC_CH_VALUE_OFFSET)
 		{
-			mediumValue2=rc_packet.rc.channel2-RC_CH_VALUE_OFFSET;
-			frontSteerAngle=(uint16_t)(((float)mediumValue2/660)*90)+90;
-			SetFrontAngle(frontSteerAngle);
+			if((rc_packet.rc.channel2-RC_CH_VALUE_OFFSET)>0)//右转
+			{
+				mediumValue2=rc_packet.rc.channel2-RC_CH_VALUE_OFFSET;
+				frontSteerAngle=(uint16_t)(((float)mediumValue2/660)*90)+90;
+				SetFrontAngle(frontSteerAngle);
+				
+			}
+			if((RC_CH_VALUE_OFFSET-rc_packet.rc.channel2)>0)//左转
+			{
+				mediumValue2=RC_CH_VALUE_OFFSET-rc_packet.rc.channel2;
+				frontSteerAngle=90-(uint16_t)(((float)mediumValue2/660)*90);
+				SetFrontAngle(frontSteerAngle);
+			}
+		}else
+		{
+				SetFrontAngle(adjustFrontSteerAngle);
+		}
+		
+		//X轴舵机驱动  
+		if(rc_packet.rc.channel0!=RC_CH_VALUE_OFFSET)
+		{
+			if((rc_packet.rc.channel0-RC_CH_VALUE_OFFSET)>0)//右转
+			{
+					if(XAngle>30&&XAngle<=140)
+					{
+						
+						XAngle-=1;
+						SetXAngle(XAngle);
+						//delay_us(5);
+						
+						
+					}			
+			}
+			if((RC_CH_VALUE_OFFSET-rc_packet.rc.channel0)>0)//左转
+			{
+					if(XAngle>=30&&XAngle<140)
+					{
+						XAngle+=1;
+						SetXAngle(XAngle);
+						//delay_us(5);
+					}	
+			}	
+			
+		}else
+		{
+			SetXAngle(XAngle);
+		}
+
+		
+		//Y轴舵机驱动
+		if(rc_packet.rc.channel1!=RC_CH_VALUE_OFFSET)
+		{
+			if((rc_packet.rc.channel1-RC_CH_VALUE_OFFSET)>0)//上转
+			{
+					if((YAngle>94)&&(YAngle<=152))
+					{
+						YAngle-=1;
+						SetYAngle(YAngle);
+						//delay_us(5);
+					}			
+			}
+			if((RC_CH_VALUE_OFFSET-rc_packet.rc.channel1)>0)//下转
+			{
+					if((YAngle>=94)&&(YAngle<152))
+					{
+						YAngle+=1;
+						SetYAngle(YAngle);
+						//delay_us(5);
+					}	
+			}	
+			
+		}else
+		{
+			SetYAngle(YAngle);
+		}
+		
+		}
+		
+		//拨弹电机
+		if(rc_packet.rc.s1==RC_SW_DOWN&&rc_packet.rc.s2==RC_SW_DOWN)
+		{
+			PullMotor_Forward(20000);
 			
 		}
-		if((RC_CH_VALUE_OFFSET-rc_packet.rc.channel2)>0)//左转
-		{
-			mediumValue2=RC_CH_VALUE_OFFSET-rc_packet.rc.channel2;
-			frontSteerAngle=90-(uint16_t)(((float)mediumValue2/660)*90);
-			SetFrontAngle(frontSteerAngle);
-		}
-	}else
-	{
-			SetFrontAngle(adjustFrontSteerAngle);
-	}
-	
-	//X轴舵机驱动  
-	if(rc_packet.rc.channel0!=RC_CH_VALUE_OFFSET)
-	{
-		if((rc_packet.rc.channel0-RC_CH_VALUE_OFFSET)>0)//右转
-		{
-				if(XAngle>30&&XAngle<=140)
-				{
-					
-					XAngle-=1;
-					SetXAngle(XAngle);
-					//delay_us(5);
-					
-					
-				}			
-		}
-		if((RC_CH_VALUE_OFFSET-rc_packet.rc.channel0)>0)//左转
-		{
-				if(XAngle>=30&&XAngle<140)
-				{
-					XAngle+=1;
-					SetXAngle(XAngle);
-					//delay_us(5);
-				}	
-		}	
-		
-	}else
-	{
-		SetXAngle(XAngle);
-	}
-
-	
-	//Y轴舵机驱动
-	if(rc_packet.rc.channel1!=RC_CH_VALUE_OFFSET)
-	{
-		if((rc_packet.rc.channel1-RC_CH_VALUE_OFFSET)>0)//上转
-		{
-				if((YAngle>94)&&(YAngle<=152))
-				{
-					YAngle-=1;
-					SetYAngle(YAngle);
-					//delay_us(5);
-				}			
-		}
-		if((RC_CH_VALUE_OFFSET-rc_packet.rc.channel1)>0)//下转
-		{
-				if((YAngle>=94)&&(YAngle<152))
-				{
-					YAngle+=1;
-					SetYAngle(YAngle);
-					//delay_us(5);
-				}	
-		}	
-		
-	}else
-	{
-		SetYAngle(YAngle);
-	}
-	
-	}
-	
-	//拨弹电机
-	if(rc_packet.rc.s1==RC_SW_DOWN&&rc_packet.rc.s2==RC_SW_DOWN)
-	{
-		PullMotor_Forward(20000);
-		
-	}
 }
 
