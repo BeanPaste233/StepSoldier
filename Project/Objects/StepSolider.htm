@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\StepSolider.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\StepSolider.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Fri Jul 01 10:28:19 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Fri Jul 01 15:14:20 2022
 <BR><P>
 <H3>Maximum Stack Usage =        184 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -81,7 +81,7 @@ Global Symbols
 <P><STRONG><a name="[37]"></a>__main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry.o(.ARM.Collect$$$$00000000))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md.o(.text)
 </UL>
-<P><STRONG><a name="[8c]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
+<P><STRONG><a name="[8b]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
 
 <P><STRONG><a name="[38]"></a>_main_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
 <BR><BR>[Calls]<UL><LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
@@ -91,17 +91,17 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
 </UL>
 
-<P><STRONG><a name="[8d]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
+<P><STRONG><a name="[8c]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
 
-<P><STRONG><a name="[8e]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
+<P><STRONG><a name="[8d]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
 
-<P><STRONG><a name="[8f]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
+<P><STRONG><a name="[8e]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
 
-<P><STRONG><a name="[90]"></a>__rt_lib_shutdown_fini</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry12b.o(.ARM.Collect$$$$0000000E))
+<P><STRONG><a name="[8f]"></a>__rt_lib_shutdown_fini</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry12b.o(.ARM.Collect$$$$0000000E))
 
-<P><STRONG><a name="[91]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000F))
+<P><STRONG><a name="[90]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000F))
 
-<P><STRONG><a name="[92]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$00000011))
+<P><STRONG><a name="[91]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$00000011))
 
 <P><STRONG><a name="[0]"></a>Reset_Handler</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, startup_stm32f10x_md.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md.o(RESET)
@@ -243,7 +243,7 @@ Global Symbols
 <LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_float_epilogue
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_SetAngle
+<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_SetAngle
 <LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_frsub
 </UL>
 
@@ -252,20 +252,20 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_SetAngle
+<BR>[Called By]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_SetAngle
 </UL>
 
 <P><STRONG><a name="[3e]"></a>__aeabi_frsub</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, fadd.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
 </UL>
 
-<P><STRONG><a name="[76]"></a>__aeabi_fmul</STRONG> (Thumb, 100 bytes, Stack size 8 bytes, fmul.o(.text))
+<P><STRONG><a name="[75]"></a>__aeabi_fmul</STRONG> (Thumb, 100 bytes, Stack size 8 bytes, fmul.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_fmul
 </UL>
-<BR>[Called By]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetRightSpeed
-<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetLeftSpeed
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_SetAngle
-<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
+<BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetRightSpeed
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetLeftSpeed
+<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_SetAngle
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
 </UL>
 
 <P><STRONG><a name="[3f]"></a>__aeabi_fdiv</STRONG> (Thumb, 124 bytes, Stack size 8 bytes, fdiv.o(.text))
@@ -273,10 +273,10 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_float_round
 </UL>
-<BR>[Called By]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetRightSpeed
-<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetLeftSpeed
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_SetAngle
-<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
+<BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetRightSpeed
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetLeftSpeed
+<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_SetAngle
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
 </UL>
 
 <P><STRONG><a name="[40]"></a>__aeabi_dmul</STRONG> (Thumb, 228 bytes, Stack size 48 bytes, dmul.o(.text))
@@ -284,7 +284,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
+<BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
 </UL>
 
 <P><STRONG><a name="[42]"></a>__aeabi_ddiv</STRONG> (Thumb, 222 bytes, Stack size 32 bytes, ddiv.o(.text))
@@ -292,7 +292,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_round
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
+<BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
 </UL>
 
 <P><STRONG><a name="[44]"></a>__aeabi_ui2f</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, ffltui.o(.text))
@@ -300,10 +300,10 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_float_epilogue
 </UL>
-<BR>[Called By]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetRightSpeed
-<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetLeftSpeed
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_SetAngle
-<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
+<BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetRightSpeed
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetLeftSpeed
+<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_SetAngle
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
 </UL>
 
 <P><STRONG><a name="[45]"></a>__aeabi_i2d</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, dflti.o(.text))
@@ -311,14 +311,14 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
+<BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
 </UL>
 
-<P><STRONG><a name="[77]"></a>__aeabi_f2uiz</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, ffixui.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetRightSpeed
-<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetLeftSpeed
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_SetAngle
-<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
+<P><STRONG><a name="[76]"></a>__aeabi_f2uiz</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, ffixui.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetRightSpeed
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetLeftSpeed
+<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_SetAngle
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
 </UL>
 
 <P><STRONG><a name="[46]"></a>__aeabi_d2uiz</STRONG> (Thumb, 50 bytes, Stack size 8 bytes, dfixui.o(.text))
@@ -326,7 +326,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
+<BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
 </UL>
 
 <P><STRONG><a name="[47]"></a>__aeabi_llsr</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, llushr.o(.text))
@@ -334,9 +334,9 @@ Global Symbols
 <LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
 </UL>
 
-<P><STRONG><a name="[93]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
+<P><STRONG><a name="[92]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
 
-<P><STRONG><a name="[94]"></a>__I$use$fp</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, iusefp.o(.text), UNUSED)
+<P><STRONG><a name="[93]"></a>__I$use$fp</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, iusefp.o(.text), UNUSED)
 
 <P><STRONG><a name="[3c]"></a>_float_round</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, fepilogue.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
@@ -374,13 +374,13 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
 </UL>
 
-<P><STRONG><a name="[95]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
+<P><STRONG><a name="[94]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
 
 <P><STRONG><a name="[48]"></a>__aeabi_llsl</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, llshl.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
 </UL>
 
-<P><STRONG><a name="[96]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
+<P><STRONG><a name="[95]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
 
 <P><STRONG><a name="[4a]"></a>AllMotor_Stop</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, motor.o(i.AllMotor_Stop))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = AllMotor_Stop
@@ -390,7 +390,7 @@ Global Symbols
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare2
 <LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare1
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
+<BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
 </UL>
 
 <P><STRONG><a name="[4]"></a>BusFault_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_it.o(i.BusFault_Handler))
@@ -417,18 +417,18 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[7c]"></a>DMA_Cmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_dma.o(i.DMA_Cmd))
-<BR><BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteToolDma_Init
+<P><STRONG><a name="[7b]"></a>DMA_Cmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_dma.o(i.DMA_Cmd))
+<BR><BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteToolDma_Init
 <LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART3_IRQHandler
 </UL>
 
-<P><STRONG><a name="[7b]"></a>DMA_Init</STRONG> (Thumb, 60 bytes, Stack size 8 bytes, stm32f10x_dma.o(i.DMA_Init))
+<P><STRONG><a name="[7a]"></a>DMA_Init</STRONG> (Thumb, 60 bytes, Stack size 8 bytes, stm32f10x_dma.o(i.DMA_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = DMA_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteToolDma_Init
+<BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteToolDma_Init
 </UL>
 
-<P><STRONG><a name="[87]"></a>DMA_SetCurrDataCounter</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_dma.o(i.DMA_SetCurrDataCounter))
+<P><STRONG><a name="[86]"></a>DMA_SetCurrDataCounter</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_dma.o(i.DMA_SetCurrDataCounter))
 <BR><BR>[Called By]<UL><LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART3_IRQHandler
 </UL>
 
@@ -446,22 +446,17 @@ Global Symbols
 <LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB1PeriphClockCmd
 <LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl_Init
+<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl_Init
 </UL>
 
 <P><STRONG><a name="[51]"></a>GPIO_Init</STRONG> (Thumb, 278 bytes, Stack size 24 bytes, stm32f10x_gpio.o(i.GPIO_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DebusUsart_Init
-<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_Init
-<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubSteelTimer_Init
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_Init
+<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubSteelTimer_Init
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PullBulletMotorTimer_Init
 <LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DCMotorTimer_Init
-</UL>
-
-<P><STRONG><a name="[6b]"></a>GPIO_ResetBits</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_gpio.o(i.GPIO_ResetBits))
-<BR><BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PullMotor_Stop
-<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PullMotor_Forward
 </UL>
 
 <P><STRONG><a name="[2]"></a>HardFault_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_it.o(i.HardFault_Handler))
@@ -473,7 +468,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare4
 <LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare3
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
+<BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
 </UL>
 
 <P><STRONG><a name="[65]"></a>LeftMotor_Reverse</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, motor.o(i.LeftMotor_Reverse))
@@ -482,7 +477,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare4
 <LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare3
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
+<BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
 </UL>
 
 <P><STRONG><a name="[3]"></a>MemManage_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_it.o(i.MemManage_Handler))
@@ -502,7 +497,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl_Init
+<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl_Init
 </UL>
 
 <P><STRONG><a name="[8]"></a>PendSV_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f10x_it.o(i.PendSV_Handler))
@@ -525,141 +520,150 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[69]"></a>PullMotor_Forward</STRONG> (Thumb, 76 bytes, Stack size 8 bytes, motor.o(i.PullMotor_Forward))
-<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = PullMotor_Forward &rArr; delay_ms &rArr; delay_us
+<P><STRONG><a name="[69]"></a>PullMotor_Back</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, motor.o(i.PullMotor_Back))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = PullMotor_Back
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
-<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxCmd
-<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
-<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare3
+<BR>[Calls]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare3
 <LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare1
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
+<BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PullMotor_Stop
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
 </UL>
 
-<P><STRONG><a name="[6d]"></a>PullMotor_Stop</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, motor.o(i.PullMotor_Stop))
-<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = PullMotor_Stop &rArr; TIM_CCxCmd
+<P><STRONG><a name="[6a]"></a>PullMotor_Forward</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, motor.o(i.PullMotor_Forward))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = PullMotor_Forward
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxCmd
-<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
+<BR>[Calls]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare3
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare1
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
+<BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PullMotor_Stop
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
 </UL>
 
-<P><STRONG><a name="[7a]"></a>RCC_AHBPeriphClockCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_rcc.o(i.RCC_AHBPeriphClockCmd))
-<BR><BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteToolDma_Init
+<P><STRONG><a name="[6b]"></a>PullMotor_Stop</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, motor.o(i.PullMotor_Stop))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = PullMotor_Stop &rArr; PullMotor_Forward
+</UL>
+<BR>[Calls]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PullMotor_Forward
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PullMotor_Back
+</UL>
+<BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
+</UL>
+
+<P><STRONG><a name="[79]"></a>RCC_AHBPeriphClockCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_rcc.o(i.RCC_AHBPeriphClockCmd))
+<BR><BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteToolDma_Init
 </UL>
 
 <P><STRONG><a name="[5f]"></a>RCC_APB1PeriphClockCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_rcc.o(i.RCC_APB1PeriphClockCmd))
 <BR><BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DebusUsart_Init
-<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_Init
-<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubSteelTimer_Init
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_Init
+<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubSteelTimer_Init
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PullBulletMotorTimer_Init
 </UL>
 
 <P><STRONG><a name="[50]"></a>RCC_APB2PeriphClockCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_rcc.o(i.RCC_APB2PeriphClockCmd))
 <BR><BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DebusUsart_Init
-<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_Init
-<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubSteelTimer_Init
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_Init
+<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubSteelTimer_Init
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PullBulletMotorTimer_Init
 <LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DCMotorTimer_Init
 </UL>
 
-<P><STRONG><a name="[8a]"></a>RCC_GetClocksFreq</STRONG> (Thumb, 192 bytes, Stack size 12 bytes, stm32f10x_rcc.o(i.RCC_GetClocksFreq))
+<P><STRONG><a name="[89]"></a>RCC_GetClocksFreq</STRONG> (Thumb, 192 bytes, Stack size 12 bytes, stm32f10x_rcc.o(i.RCC_GetClocksFreq))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = RCC_GetClocksFreq
 </UL>
 <BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Init
 </UL>
 
-<P><STRONG><a name="[6e]"></a>RemoteControl</STRONG> (Thumb, 1756 bytes, Stack size 88 bytes, rc.o(i.RemoteControl))
+<P><STRONG><a name="[6c]"></a>RemoteControl</STRONG> (Thumb, 1762 bytes, Stack size 88 bytes, rc.o(i.RemoteControl))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = RemoteControl &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d
+<BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
+<LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d
 <LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 <LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 <LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2uiz
-<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
-<LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetYAngle
-<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetRightSpeed
-<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetLeftSpeed
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFrontAngle
-<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RightMotor_Reverse
-<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RightMotor_Forward
-<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PullMotor_Stop
-<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PullMotor_Forward
+<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetYAngle
+<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetRightSpeed
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetLeftSpeed
+<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFrontAngle
+<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RightMotor_Reverse
+<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RightMotor_Forward
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PullMotor_Stop
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PullMotor_Forward
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PullMotor_Back
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LeftMotor_Reverse
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LeftMotor_Forward
 <LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AllMotor_Stop
 <LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2f
-<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
 <LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
-<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2uiz
-<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetXAngle
+<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2uiz
+<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetXAngle
 </UL>
 <BR>[Called By]<UL><LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART3_IRQHandler
 </UL>
 
-<P><STRONG><a name="[78]"></a>RemoteControl_Init</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, rc.o(i.RemoteControl_Init))
+<P><STRONG><a name="[77]"></a>RemoteControl_Init</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, rc.o(i.RemoteControl_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = RemoteControl_Init &rArr; DebusUsart_Init &rArr; USART_Init &rArr; RCC_GetClocksFreq
 </UL>
-<BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteToolDma_Init
+<BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteToolDma_Init
 <LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_RC_Init
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DebusUsart_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[86]"></a>RemotePacketProcess</STRONG> (Thumb, 194 bytes, Stack size 0 bytes, rc.o(i.RemotePacketProcess))
+<P><STRONG><a name="[85]"></a>RemotePacketProcess</STRONG> (Thumb, 194 bytes, Stack size 0 bytes, rc.o(i.RemotePacketProcess))
 <BR><BR>[Called By]<UL><LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART3_IRQHandler
 </UL>
 
-<P><STRONG><a name="[79]"></a>RemoteToolDma_Init</STRONG> (Thumb, 74 bytes, Stack size 48 bytes, rc.o(i.RemoteToolDma_Init))
+<P><STRONG><a name="[78]"></a>RemoteToolDma_Init</STRONG> (Thumb, 74 bytes, Stack size 48 bytes, rc.o(i.RemoteToolDma_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = RemoteToolDma_Init &rArr; DMA_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_AHBPeriphClockCmd
-<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Init
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Cmd
+<BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_AHBPeriphClockCmd
+<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Init
+<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Cmd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl_Init
+<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl_Init
 </UL>
 
-<P><STRONG><a name="[70]"></a>RightMotor_Forward</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, motor.o(i.RightMotor_Forward))
+<P><STRONG><a name="[6e]"></a>RightMotor_Forward</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, motor.o(i.RightMotor_Forward))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = RightMotor_Forward
 </UL>
 <BR>[Calls]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare2
 <LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare1
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
+<BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
 </UL>
 
-<P><STRONG><a name="[6f]"></a>RightMotor_Reverse</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, motor.o(i.RightMotor_Reverse))
+<P><STRONG><a name="[6d]"></a>RightMotor_Reverse</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, motor.o(i.RightMotor_Reverse))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = RightMotor_Reverse
 </UL>
 <BR>[Calls]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare2
 <LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare1
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
+<BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
 </UL>
 
-<P><STRONG><a name="[7d]"></a>RubESCUnlock</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, motor.o(i.RubESCUnlock))
+<P><STRONG><a name="[7c]"></a>RubESCUnlock</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, motor.o(i.RubESCUnlock))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = RubESCUnlock
 </UL>
 <BR>[Calls]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare3
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare2
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubMotorInit
+<BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubMotorInit
 </UL>
 
-<P><STRONG><a name="[7e]"></a>RubMotorInit</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, motor.o(i.RubMotorInit))
+<P><STRONG><a name="[7d]"></a>RubMotorInit</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, motor.o(i.RubMotorInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = RubMotorInit &rArr; RubSteelTimer_Init &rArr; GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubESCUnlock
-<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubSteelTimer_Init
+<BR>[Calls]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubESCUnlock
+<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubSteelTimer_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[7f]"></a>RubSteelTimer_Init</STRONG> (Thumb, 174 bytes, Stack size 40 bytes, timer.o(i.RubSteelTimer_Init))
+<P><STRONG><a name="[7e]"></a>RubSteelTimer_Init</STRONG> (Thumb, 174 bytes, Stack size 40 bytes, timer.o(i.RubSteelTimer_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = RubSteelTimer_Init &rArr; GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TimeBaseInit
@@ -673,70 +677,70 @@ Global Symbols
 <LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB1PeriphClockCmd
 <LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubMotorInit
+<BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubMotorInit
 </UL>
 
 <P><STRONG><a name="[6]"></a>SVC_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f10x_it.o(i.SVC_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md.o(RESET)
 </UL>
-<P><STRONG><a name="[71]"></a>SetFrontAngle</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, motor.o(i.SetFrontAngle))
+<P><STRONG><a name="[6f]"></a>SetFrontAngle</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, motor.o(i.SetFrontAngle))
 <BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = SetFrontAngle &rArr; SteerTimer_SetAngle &rArr; __aeabi_fsub &rArr; __aeabi_fadd &rArr; _float_epilogue
 </UL>
-<BR>[Calls]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_SetAngle
+<BR>[Calls]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_SetAngle
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
+<BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
 </UL>
 
-<P><STRONG><a name="[72]"></a>SetLeftSpeed</STRONG> (Thumb, 54 bytes, Stack size 24 bytes, motor.o(i.SetLeftSpeed))
+<P><STRONG><a name="[70]"></a>SetLeftSpeed</STRONG> (Thumb, 54 bytes, Stack size 24 bytes, motor.o(i.SetLeftSpeed))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = SetLeftSpeed &rArr; __aeabi_fmul
 </UL>
 <BR>[Calls]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2f
-<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
 <LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
-<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2uiz
+<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2uiz
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare2
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
+<BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
 </UL>
 
-<P><STRONG><a name="[73]"></a>SetRightSpeed</STRONG> (Thumb, 54 bytes, Stack size 24 bytes, motor.o(i.SetRightSpeed))
+<P><STRONG><a name="[71]"></a>SetRightSpeed</STRONG> (Thumb, 54 bytes, Stack size 24 bytes, motor.o(i.SetRightSpeed))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = SetRightSpeed &rArr; __aeabi_fmul
 </UL>
 <BR>[Calls]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2f
-<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
 <LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
-<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2uiz
+<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2uiz
 <LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare3
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
+<BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
 </UL>
 
-<P><STRONG><a name="[74]"></a>SetXAngle</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, motor.o(i.SetXAngle))
+<P><STRONG><a name="[72]"></a>SetXAngle</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, motor.o(i.SetXAngle))
 <BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = SetXAngle &rArr; SteerTimer_SetAngle &rArr; __aeabi_fsub &rArr; __aeabi_fadd &rArr; _float_epilogue
 </UL>
-<BR>[Calls]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_SetAngle
+<BR>[Calls]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_SetAngle
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
+<BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
 <LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[75]"></a>SetYAngle</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, motor.o(i.SetYAngle))
+<P><STRONG><a name="[74]"></a>SetYAngle</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, motor.o(i.SetYAngle))
 <BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = SetYAngle &rArr; SteerTimer_SetAngle &rArr; __aeabi_fsub &rArr; __aeabi_fadd &rArr; _float_epilogue
 </UL>
-<BR>[Calls]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_SetAngle
+<BR>[Calls]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_SetAngle
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
+<BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
 </UL>
 
-<P><STRONG><a name="[83]"></a>SteerMotor_Init</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, motor.o(i.SteerMotor_Init))
+<P><STRONG><a name="[82]"></a>SteerMotor_Init</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, motor.o(i.SteerMotor_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = SteerMotor_Init &rArr; SteerTimer_Init &rArr; GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_Init
+<BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[84]"></a>SteerTimer_Init</STRONG> (Thumb, 242 bytes, Stack size 40 bytes, timer.o(i.SteerTimer_Init))
+<P><STRONG><a name="[83]"></a>SteerTimer_Init</STRONG> (Thumb, 242 bytes, Stack size 40 bytes, timer.o(i.SteerTimer_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = SteerTimer_Init &rArr; GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TimeBaseInit
@@ -750,26 +754,26 @@ Global Symbols
 <LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB1PeriphClockCmd
 <LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerMotor_Init
+<BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerMotor_Init
 </UL>
 
-<P><STRONG><a name="[80]"></a>SteerTimer_SetAngle</STRONG> (Thumb, 122 bytes, Stack size 40 bytes, timer.o(i.SteerTimer_SetAngle))
+<P><STRONG><a name="[7f]"></a>SteerTimer_SetAngle</STRONG> (Thumb, 122 bytes, Stack size 40 bytes, timer.o(i.SteerTimer_SetAngle))
 <BR><BR>[Stack]<UL><LI>Max Depth = 60<LI>Call Chain = SteerTimer_SetAngle &rArr; __aeabi_fsub &rArr; __aeabi_fadd &rArr; _float_epilogue
 </UL>
 <BR>[Calls]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2f
 <LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
-<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
 <LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
 <LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
-<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2uiz
+<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2uiz
 <LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare4
 <LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare3
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare2
 <LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare1
 </UL>
-<BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetYAngle
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFrontAngle
-<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetXAngle
+<BR>[Called By]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetYAngle
+<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetFrontAngle
+<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetXAngle
 </UL>
 
 <P><STRONG><a name="[9]"></a>SysTick_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f10x_it.o(i.SysTick_Handler))
@@ -778,20 +782,13 @@ Global Symbols
 <P><STRONG><a name="[36]"></a>SystemInit</STRONG> (Thumb, 78 bytes, Stack size 8 bytes, system_stm32f10x.o(i.SystemInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = SystemInit &rArr; SetSysClock &rArr; SetSysClockTo72
 </UL>
-<BR>[Calls]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClock
+<BR>[Calls]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClock
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md.o(.text)
 </UL>
-<P><STRONG><a name="[6a]"></a>TIM_CCxCmd</STRONG> (Thumb, 30 bytes, Stack size 12 bytes, stm32f10x_tim.o(i.TIM_CCxCmd))
-<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = TIM_CCxCmd
-</UL>
-<BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PullMotor_Stop
-<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PullMotor_Forward
-</UL>
-
 <P><STRONG><a name="[5c]"></a>TIM_Cmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_tim.o(i.TIM_Cmd))
-<BR><BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_Init
-<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubSteelTimer_Init
+<BR><BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_Init
+<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubSteelTimer_Init
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PullBulletMotorTimer_Init
 <LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DCMotorTimer_Init
 </UL>
@@ -801,8 +798,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[53]"></a>TIM_InternalClockConfig</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f10x_tim.o(i.TIM_InternalClockConfig))
-<BR><BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_Init
-<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubSteelTimer_Init
+<BR><BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_Init
+<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubSteelTimer_Init
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PullBulletMotorTimer_Init
 <LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DCMotorTimer_Init
 </UL>
@@ -810,13 +807,13 @@ Global Symbols
 <P><STRONG><a name="[54]"></a>TIM_OC1Init</STRONG> (Thumb, 132 bytes, Stack size 16 bytes, stm32f10x_tim.o(i.TIM_OC1Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = TIM_OC1Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_Init
+<BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_Init
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PullBulletMotorTimer_Init
 <LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DCMotorTimer_Init
 </UL>
 
 <P><STRONG><a name="[58]"></a>TIM_OC1PreloadConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(i.TIM_OC1PreloadConfig))
-<BR><BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_Init
+<BR><BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_Init
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PullBulletMotorTimer_Init
 <LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DCMotorTimer_Init
 </UL>
@@ -824,25 +821,25 @@ Global Symbols
 <P><STRONG><a name="[55]"></a>TIM_OC2Init</STRONG> (Thumb, 154 bytes, Stack size 16 bytes, stm32f10x_tim.o(i.TIM_OC2Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = TIM_OC2Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubSteelTimer_Init
+<BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubSteelTimer_Init
 <LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DCMotorTimer_Init
 </UL>
 
 <P><STRONG><a name="[59]"></a>TIM_OC2PreloadConfig</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_tim.o(i.TIM_OC2PreloadConfig))
-<BR><BR>[Called By]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubSteelTimer_Init
+<BR><BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubSteelTimer_Init
 <LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DCMotorTimer_Init
 </UL>
 
 <P><STRONG><a name="[56]"></a>TIM_OC3Init</STRONG> (Thumb, 150 bytes, Stack size 16 bytes, stm32f10x_tim.o(i.TIM_OC3Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = TIM_OC3Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubSteelTimer_Init
+<BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubSteelTimer_Init
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PullBulletMotorTimer_Init
 <LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DCMotorTimer_Init
 </UL>
 
 <P><STRONG><a name="[5a]"></a>TIM_OC3PreloadConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(i.TIM_OC3PreloadConfig))
-<BR><BR>[Called By]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubSteelTimer_Init
+<BR><BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubSteelTimer_Init
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PullBulletMotorTimer_Init
 <LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DCMotorTimer_Init
 </UL>
@@ -850,52 +847,54 @@ Global Symbols
 <P><STRONG><a name="[57]"></a>TIM_OC4Init</STRONG> (Thumb, 114 bytes, Stack size 16 bytes, stm32f10x_tim.o(i.TIM_OC4Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = TIM_OC4Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_Init
+<BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_Init
 <LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DCMotorTimer_Init
 </UL>
 
 <P><STRONG><a name="[5b]"></a>TIM_OC4PreloadConfig</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_tim.o(i.TIM_OC4PreloadConfig))
-<BR><BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_Init
+<BR><BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_Init
 <LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DCMotorTimer_Init
 </UL>
 
 <P><STRONG><a name="[4b]"></a>TIM_SetCompare1</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_tim.o(i.TIM_SetCompare1))
-<BR><BR>[Called By]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RightMotor_Reverse
-<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RightMotor_Forward
-<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PullMotor_Forward
+<BR><BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RightMotor_Reverse
+<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RightMotor_Forward
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PullMotor_Forward
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PullMotor_Back
 <LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AllMotor_Stop
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_SetAngle
+<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_SetAngle
 </UL>
 
 <P><STRONG><a name="[4c]"></a>TIM_SetCompare2</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_tim.o(i.TIM_SetCompare2))
-<BR><BR>[Called By]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetLeftSpeed
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubESCUnlock
-<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RightMotor_Reverse
-<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RightMotor_Forward
+<BR><BR>[Called By]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetLeftSpeed
+<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubESCUnlock
+<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RightMotor_Reverse
+<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RightMotor_Forward
 <LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AllMotor_Stop
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_SetAngle
+<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_SetAngle
 </UL>
 
 <P><STRONG><a name="[4d]"></a>TIM_SetCompare3</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_tim.o(i.TIM_SetCompare3))
-<BR><BR>[Called By]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetRightSpeed
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubESCUnlock
-<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PullMotor_Forward
+<BR><BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetRightSpeed
+<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubESCUnlock
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PullMotor_Forward
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PullMotor_Back
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LeftMotor_Reverse
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LeftMotor_Forward
 <LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AllMotor_Stop
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_SetAngle
+<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_SetAngle
 </UL>
 
 <P><STRONG><a name="[4e]"></a>TIM_SetCompare4</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_tim.o(i.TIM_SetCompare4))
 <BR><BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LeftMotor_Reverse
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LeftMotor_Forward
 <LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AllMotor_Stop
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_SetAngle
+<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_SetAngle
 </UL>
 
 <P><STRONG><a name="[52]"></a>TIM_TimeBaseInit</STRONG> (Thumb, 122 bytes, Stack size 0 bytes, stm32f10x_tim.o(i.TIM_TimeBaseInit))
-<BR><BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_Init
-<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubSteelTimer_Init
+<BR><BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerTimer_Init
+<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubSteelTimer_Init
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PullBulletMotorTimer_Init
 <LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DCMotorTimer_Init
 </UL>
@@ -903,17 +902,17 @@ Global Symbols
 <P><STRONG><a name="[31]"></a>USART3_IRQHandler</STRONG> (Thumb, 66 bytes, Stack size 8 bytes, stm32f10x_it.o(i.USART3_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = USART3_IRQHandler &rArr; RemoteControl &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ReceiveData
-<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetITStatus
-<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ClearITPendingBit
-<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemotePacketProcess
-<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
-<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_SetCurrDataCounter
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Cmd
+<BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ReceiveData
+<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetITStatus
+<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ClearITPendingBit
+<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemotePacketProcess
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
+<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_SetCurrDataCounter
+<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Cmd
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md.o(RESET)
 </UL>
-<P><STRONG><a name="[89]"></a>USART_ClearITPendingBit</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, stm32f10x_usart.o(i.USART_ClearITPendingBit))
+<P><STRONG><a name="[88]"></a>USART_ClearITPendingBit</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, stm32f10x_usart.o(i.USART_ClearITPendingBit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = USART_ClearITPendingBit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART3_IRQHandler
@@ -927,7 +926,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DebusUsart_Init
 </UL>
 
-<P><STRONG><a name="[85]"></a>USART_GetITStatus</STRONG> (Thumb, 84 bytes, Stack size 16 bytes, stm32f10x_usart.o(i.USART_GetITStatus))
+<P><STRONG><a name="[84]"></a>USART_GetITStatus</STRONG> (Thumb, 84 bytes, Stack size 16 bytes, stm32f10x_usart.o(i.USART_GetITStatus))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = USART_GetITStatus
 </UL>
 <BR>[Called By]<UL><LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART3_IRQHandler
@@ -942,46 +941,45 @@ Global Symbols
 <P><STRONG><a name="[60]"></a>USART_Init</STRONG> (Thumb, 210 bytes, Stack size 56 bytes, stm32f10x_usart.o(i.USART_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = USART_Init &rArr; RCC_GetClocksFreq
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_GetClocksFreq
+<BR>[Calls]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_GetClocksFreq
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DebusUsart_Init
 </UL>
 
-<P><STRONG><a name="[88]"></a>USART_ReceiveData</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f10x_usart.o(i.USART_ReceiveData))
+<P><STRONG><a name="[87]"></a>USART_ReceiveData</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f10x_usart.o(i.USART_ReceiveData))
 <BR><BR>[Called By]<UL><LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART3_IRQHandler
 </UL>
 
 <P><STRONG><a name="[5]"></a>UsageFault_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_it.o(i.UsageFault_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md.o(RESET)
 </UL>
-<P><STRONG><a name="[97]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
+<P><STRONG><a name="[96]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
 
-<P><STRONG><a name="[98]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
+<P><STRONG><a name="[97]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
 
-<P><STRONG><a name="[99]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
+<P><STRONG><a name="[98]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 
-<P><STRONG><a name="[6c]"></a>delay_ms</STRONG> (Thumb, 32 bytes, Stack size 12 bytes, delay.o(i.delay_ms))
+<P><STRONG><a name="[73]"></a>delay_ms</STRONG> (Thumb, 32 bytes, Stack size 12 bytes, delay.o(i.delay_ms))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = delay_ms &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
+<BR>[Calls]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
 </UL>
-<BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PullMotor_Forward
-<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
+<BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl
 </UL>
 
-<P><STRONG><a name="[8b]"></a>delay_us</STRONG> (Thumb, 40 bytes, Stack size 12 bytes, delay.o(i.delay_us))
+<P><STRONG><a name="[8a]"></a>delay_us</STRONG> (Thumb, 40 bytes, Stack size 12 bytes, delay.o(i.delay_us))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = delay_us
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
+<BR>[Called By]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
 </UL>
 
 <P><STRONG><a name="[35]"></a>main</STRONG> (Thumb, 62 bytes, Stack size 0 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = main &rArr; RemoteControl_Init &rArr; DebusUsart_Init &rArr; USART_Init &rArr; RCC_GetClocksFreq
 </UL>
-<BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerMotor_Init
-<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetXAngle
-<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubMotorInit
-<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl_Init
+<BR>[Calls]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SteerMotor_Init
+<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetXAngle
+<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RubMotorInit
+<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RemoteControl_Init
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PullBulletMotorTimer_Init
 <LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DCMotorTimer_Init
 </UL>
@@ -990,18 +988,18 @@ Global Symbols
 <H3>
 Local Symbols
 </H3>
-<P><STRONG><a name="[81]"></a>SetSysClock</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, system_stm32f10x.o(i.SetSysClock))
+<P><STRONG><a name="[80]"></a>SetSysClock</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, system_stm32f10x.o(i.SetSysClock))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = SetSysClock &rArr; SetSysClockTo72
 </UL>
-<BR>[Calls]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClockTo72
+<BR>[Calls]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClockTo72
 </UL>
 <BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit
 </UL>
 
-<P><STRONG><a name="[82]"></a>SetSysClockTo72</STRONG> (Thumb, 214 bytes, Stack size 12 bytes, system_stm32f10x.o(i.SetSysClockTo72))
+<P><STRONG><a name="[81]"></a>SetSysClockTo72</STRONG> (Thumb, 214 bytes, Stack size 12 bytes, system_stm32f10x.o(i.SetSysClockTo72))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = SetSysClockTo72
 </UL>
-<BR>[Called By]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClock
+<BR>[Called By]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClock
 </UL>
 <P>
 <H3>

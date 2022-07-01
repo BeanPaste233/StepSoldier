@@ -402,7 +402,7 @@ void RemoteControl(void)
 		if(rc_packet.rc.s1==RC_SW_DOWN&&rc_packet.rc.s2==RC_SW_DOWN)
 		{
 			PullMotor_Forward(20000);
-			
+			PullMotor_Back(0);
 		}
 }
 

@@ -19,10 +19,6 @@ void PullMotor_Back(uint16_t speed)
 {
 	//关闭通道3 开启通道1 反转
 	if(speed>20000||speed<10000) return;
-	TIM_CCxCmd(TIM3,TIM_Channel_3,TIM_CCx_Disable);
-  GPIO_ResetBits(GPIOB,GPIO_Pin_0);
-	delay_ms(500);
-	TIM_CCxCmd(TIM3,TIM_Channel_1,TIM_CCx_Enable);
 	TIM_SetCompare3(TIM3,0);
 	TIM_SetCompare1(TIM3,speed);
 	//TIM_SetCompare1(TIM3,10000);
@@ -32,22 +28,14 @@ void PullMotor_Forward(uint16_t speed)
 {
 	//关闭通道1 开启通道3 正转
 	if(speed>20000||speed<10000) return;
-	
-	
-	//TIM_SetCompare1(TIM3,0);
-	TIM_CCxCmd(TIM3,TIM_Channel_1,TIM_CCx_Disable);
-  GPIO_ResetBits(GPIOA,GPIO_Pin_6);
-	delay_ms(500);
-	TIM_CCxCmd(TIM3,TIM_Channel_3,TIM_CCx_Enable);
 	TIM_SetCompare1(TIM3,0);
 	TIM_SetCompare3(TIM3,speed);
 }
 void PullMotor_Stop()
 {
-	TIM_CCxCmd(TIM3,TIM_Channel_1,TIM_CCx_Disable);
-	TIM_CCxCmd(TIM3,TIM_Channel_3,TIM_CCx_Disable);
-  GPIO_ResetBits(GPIOA,GPIO_Pin_6);
-	GPIO_ResetBits(GPIOB,GPIO_Pin_0);
+		PullMotor_Forward(20000);
+		PullMotor_Back(20000);
+		
 }
 void AllMotor_Stop(void)
 {
